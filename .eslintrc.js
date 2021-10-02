@@ -11,9 +11,17 @@ module.exports = {
     ecmaVersion: 12,
     sourceType: 'module',
   },
-  plugins: ['react', 'prettier'],
+  plugins: ['react', 'prettier', 'import'],
   rules: {
     'no-unused-vars': 'warn',
+    'import/no-extraneous-dependencies': [
+      'error',
+      {
+        devDependencies: false,
+        optionalDependencies: false,
+        peerDependencies: false,
+      },
+    ],
     'no-nested-ternary': 'off',
     'react/jsx-filename-extension': [1, {extensions: ['.js', '.jsx']}],
     'prettier/prettier': [
